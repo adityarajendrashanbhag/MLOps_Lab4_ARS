@@ -1,4 +1,4 @@
-# Unit Converter
+# LAB 4 - Unit Converter
 
 A small Python project for converting temperature, distance, and weight units. The repository includes conversion logic in `src/converter.py` and automated tests written with both `pytest` and `unittest`.
 
@@ -64,6 +64,14 @@ python -m unittest test.test_unittest
 - `src/converter.py`: contains the unit conversion functions and validation checks
 - `test/test_pytest.py`: contains test coverage using `pytest`
 - `test/test_unittest.py`: contains test coverage using `unittest`
+
+## Screenshots
+
+- test_pytest.py
+
+
+- test_unittest.py
+
 
 ## Notes
 
