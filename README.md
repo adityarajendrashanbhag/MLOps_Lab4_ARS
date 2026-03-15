@@ -67,10 +67,13 @@ python -m unittest test.test_unittest
 
 ## Screenshots
 
-- test_pytest.py
+### Pytest Output
 
+![Pytest Screenshot](./test_screenshots/screeshot_pytest.jpg)
 
-- test_unittest.py
+### Unittest Output
+
+![Unittest Screenshot](./test_screenshots/screeshot_unit_test.jpg)
 
 
 ## Notes
