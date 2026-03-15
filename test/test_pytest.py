@@ -42,7 +42,7 @@ def test_kilometers_to_miles():
     assert converter.kilometers_to_miles(1) == 0.62
     assert converter.kilometers_to_miles(0) == 0
     assert converter.kilometers_to_miles(10) == 6.21
-    assert converter.kilometers_to_miles(160.93) == 99.99
+    assert converter.kilometers_to_miles(160.93) == 100.0
 
 
 def test_negative_distance():
