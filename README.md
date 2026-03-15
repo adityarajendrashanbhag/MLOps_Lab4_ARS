@@ -1,4 +1,4 @@
-# LAB 4 - Unit Converter
+# LAB 4 - Unit Converter (Github Labs - Lab 1)
 
 A small Python project for converting temperature, distance, and weight units. The repository includes conversion logic in `src/converter.py` and automated tests written with both `pytest` and `unittest`.
 
