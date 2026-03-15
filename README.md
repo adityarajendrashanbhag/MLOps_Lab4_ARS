@@ -1,16 +1,13 @@
 # Unit Converter
 
-A small Python unit converter project with functions for temperature, distance, and weight conversions. The repo includes automated tests with both `pytest` and `unittest`, plus GitHub Actions workflows that run on pushes to `main`.
+A small Python project for converting temperature, distance, and weight units. The repository includes conversion logic in `src/converter.py` and automated tests written with both `pytest` and `unittest`.
 
 ## Project Structure
 
 ```text
 unit-converter/
-|-- .github/
-|   `-- workflows/
-|       |-- pytest_action.yml
-|       `-- unittest_action.yml
 |-- data/
+|   `-- __init__.py
 |-- src/
 |   |-- __init__.py
 |   `-- converter.py
@@ -22,25 +19,27 @@ unit-converter/
 `-- README.md
 ```
 
-## Available Conversions
+## Features
 
-| Category | Function | Description |
-|---|---|---|
-| Temperature | `celsius_to_fahrenheit()` | Celsius to Fahrenheit |
-| Temperature | `fahrenheit_to_celsius()` | Fahrenheit to Celsius |
-| Temperature | `celsius_to_kelvin()` | Celsius to Kelvin |
-| Distance | `miles_to_kilometers()` | Miles to kilometers |
-| Distance | `kilometers_to_miles()` | Kilometers to miles |
-| Weight | `pounds_to_kilograms()` | Pounds to kilograms |
-| Weight | `kilograms_to_pounds()` | Kilograms to pounds |
+The project currently supports these conversions:
+
+- `celsius_to_fahrenheit()`
+- `fahrenheit_to_celsius()`
+- `celsius_to_kelvin()`
+- `miles_to_kilometers()`
+- `kilometers_to_miles()`
+- `pounds_to_kilograms()`
+- `kilograms_to_pounds()`
 
 ## Validation Rules
 
-- Temperature inputs must be numeric.
-- `celsius_to_kelvin()` rejects values below absolute zero (`-273.15` C).
-- Distance and weight inputs must be numeric and non-negative.
+- All inputs must be numeric (`int` or `float`).
+- `celsius_to_kelvin()` raises a `ValueError` for temperatures below `-273.15`.
+- Distance and weight conversion functions raise a `ValueError` for negative inputs.
 
 ## Installation
+
+Install the project dependency with:
 
 ```bash
 pip install -r requirements.txt
@@ -60,15 +59,13 @@ Run the `unittest` suite:
 python -m unittest test.test_unittest
 ```
 
-## CI/CD
-
-The repo includes two GitHub Actions workflows in `.github/workflows/`:
-
-- `pytest_action.yml`: runs the `pytest` suite on pushes to `main`
-- `unittest_action.yml`: runs the `unittest` suite on pushes to `main`
-
 ## Main Files
 
-- [`src/converter.py`](./src/converter.py): conversion logic and input validation
-- [`test/test_pytest.py`](./test/test_pytest.py): test coverage using `pytest`
-- [`test/test_unittest.py`](./test/test_unittest.py): test coverage using `unittest`
+- `src/converter.py`: contains the unit conversion functions and validation checks
+- `test/test_pytest.py`: contains test coverage using `pytest`
+- `test/test_unittest.py`: contains test coverage using `unittest`
+
+## Notes
+
+- `requirements.txt` currently includes `pytest`.
+- The `data/` folder is present in the repo structure but is not used by the converter logic right now.
