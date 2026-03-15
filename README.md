@@ -1,43 +1,44 @@
 # Unit Converter
 
-A Python unit converter module with functions for **Temperature**, **Distance**, and **Weight** conversions. Includes full test coverage using both `pytest` and `unittest`, with GitHub Actions CI/CD workflows.
-
----
+A small Python unit converter project with functions for temperature, distance, and weight conversions. The repo includes automated tests with both `pytest` and `unittest`, plus GitHub Actions workflows that run on pushes to `main`.
 
 ## Project Structure
 
-```
+```text
 unit-converter/
-├── data/
-├── src/
-│   ├── __init__.py
-│   └── converter.py
-├── test/
-│   ├── __init__.py
-│   ├── test_pytest.py
-│   └── test_unittest.py
-├── workflows/
-│   ├── lab1_pytest_action.yml
-│   └── lab2_unittest_action.yml
-├── requirements.txt
-└── README.md
+|-- .github/
+|   `-- workflows/
+|       |-- pytest_action.yml
+|       `-- unittest_action.yml
+|-- data/
+|-- src/
+|   |-- __init__.py
+|   `-- converter.py
+|-- test/
+|   |-- __init__.py
+|   |-- test_pytest.py
+|   `-- test_unittest.py
+|-- requirements.txt
+`-- README.md
 ```
-
----
 
 ## Available Conversions
 
-| Category    | Function                  | Description              |
-|-------------|---------------------------|--------------------------|
-| Temperature | `celsius_to_fahrenheit()` | Celsius → Fahrenheit     |
-| Temperature | `fahrenheit_to_celsius()` | Fahrenheit → Celsius     |
-| Temperature | `celsius_to_kelvin()`     | Celsius → Kelvin         |
-| Distance    | `miles_to_kilometers()`   | Miles → Kilometers       |
-| Distance    | `kilometers_to_miles()`   | Kilometers → Miles       |
-| Weight      | `pounds_to_kilograms()`   | Pounds → Kilograms       |
-| Weight      | `kilograms_to_pounds()`   | Kilograms → Pounds       |
+| Category | Function | Description |
+|---|---|---|
+| Temperature | `celsius_to_fahrenheit()` | Celsius to Fahrenheit |
+| Temperature | `fahrenheit_to_celsius()` | Fahrenheit to Celsius |
+| Temperature | `celsius_to_kelvin()` | Celsius to Kelvin |
+| Distance | `miles_to_kilometers()` | Miles to kilometers |
+| Distance | `kilometers_to_miles()` | Kilometers to miles |
+| Weight | `pounds_to_kilograms()` | Pounds to kilograms |
+| Weight | `kilograms_to_pounds()` | Kilograms to pounds |
 
----
+## Validation Rules
+
+- Temperature inputs must be numeric.
+- `celsius_to_kelvin()` rejects values below absolute zero (`-273.15` C).
+- Distance and weight inputs must be numeric and non-negative.
 
 ## Installation
 
@@ -47,20 +48,27 @@ pip install -r requirements.txt
 
 ## Running Tests
 
-**Pytest:**
+Run the `pytest` suite:
+
 ```bash
 pytest
 ```
 
-**Unittest:**
+Run the `unittest` suite:
+
 ```bash
 python -m unittest test.test_unittest
 ```
 
----
-
 ## CI/CD
 
-Two GitHub Actions workflows are included in the `workflows/` folder:
-- **lab1_pytest_action.yml** — Runs pytest on push to `main`
-- **lab2_unittest_action.yml** — Runs unittest on push to `main`
+The repo includes two GitHub Actions workflows in `.github/workflows/`:
+
+- `pytest_action.yml`: runs the `pytest` suite on pushes to `main`
+- `unittest_action.yml`: runs the `unittest` suite on pushes to `main`
+
+## Main Files
+
+- [`src/converter.py`](./src/converter.py): conversion logic and input validation
+- [`test/test_pytest.py`](./test/test_pytest.py): test coverage using `pytest`
+- [`test/test_unittest.py`](./test/test_unittest.py): test coverage using `unittest`
