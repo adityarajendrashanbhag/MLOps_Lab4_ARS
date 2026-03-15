@@ -1,3 +1,5 @@
+"""Utility functions for temperature, distance, and weight conversions."""
+
 def celsius_to_fahrenheit(celsius):
     """
     Converts Celsius to Fahrenheit.

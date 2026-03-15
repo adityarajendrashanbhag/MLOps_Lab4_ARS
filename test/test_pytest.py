@@ -22,6 +22,7 @@ def test_celsius_to_kelvin():
     assert converter.celsius_to_kelvin(0) == 273.15
     assert converter.celsius_to_kelvin(100) == 373.15
     assert converter.celsius_to_kelvin(-273.15) == 0
+    assert converter.celsius_to_kelvin(25.5) == 298.65
 
 
 def test_celsius_to_kelvin_below_absolute_zero():
@@ -52,6 +53,11 @@ def test_negative_distance():
         converter.kilometers_to_miles(-10)
 
 
+def test_decimal_distance_values():
+    assert converter.miles_to_kilometers(2.5) == 4.02
+    assert converter.kilometers_to_miles(2.5) == 1.55
+
+
 # ---- Weight Tests ----
 
 def test_pounds_to_kilograms():
@@ -73,6 +79,11 @@ def test_negative_weight():
         converter.pounds_to_kilograms(-5)
     with pytest.raises(ValueError):
         converter.kilograms_to_pounds(-10)
+
+
+def test_decimal_weight_values():
+    assert converter.pounds_to_kilograms(2.5) == 1.13
+    assert converter.kilograms_to_pounds(2.5) == 5.51
 
 
 # ---- Invalid Input Tests ----

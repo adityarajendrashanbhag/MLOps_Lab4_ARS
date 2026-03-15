@@ -59,6 +59,17 @@ Run the `unittest` suite:
 python -m unittest test.test_unittest
 ```
 
+## Example Usage
+
+```python
+from src import converter
+
+print(converter.celsius_to_fahrenheit(25))   # 77.0
+print(converter.celsius_to_kelvin(25))       # 298.15
+print(converter.miles_to_kilometers(5))      # 8.05
+print(converter.kilograms_to_pounds(10))     # 22.05
+```
+
 ## Main Files
 
 - `src/converter.py`: contains the unit conversion functions and validation checks

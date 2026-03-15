@@ -27,6 +27,7 @@ class TestTemperature(unittest.TestCase):
         self.assertEqual(converter.celsius_to_kelvin(0), 273.15)
         self.assertEqual(converter.celsius_to_kelvin(100), 373.15)
         self.assertEqual(converter.celsius_to_kelvin(-273.15), 0)
+        self.assertEqual(converter.celsius_to_kelvin(25.5), 298.65)
 
     def test_celsius_to_kelvin_below_absolute_zero(self):
         with self.assertRaises(ValueError):
@@ -52,6 +53,10 @@ class TestDistance(unittest.TestCase):
         with self.assertRaises(ValueError):
             converter.kilometers_to_miles(-10)
 
+    def test_decimal_distance_values(self):
+        self.assertEqual(converter.miles_to_kilometers(2.5), 4.02)
+        self.assertEqual(converter.kilometers_to_miles(2.5), 1.55)
+
 
 class TestWeight(unittest.TestCase):
 
@@ -72,6 +77,10 @@ class TestWeight(unittest.TestCase):
             converter.pounds_to_kilograms(-5)
         with self.assertRaises(ValueError):
             converter.kilograms_to_pounds(-10)
+
+    def test_decimal_weight_values(self):
+        self.assertEqual(converter.pounds_to_kilograms(2.5), 1.13)
+        self.assertEqual(converter.kilograms_to_pounds(2.5), 5.51)
 
 
 class TestInvalidInput(unittest.TestCase):
